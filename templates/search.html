@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+</head>
+
+<h1>Поисковая страница</h1>
+<form action="/search/" method="get">
+    <input type="text" placeholder="введите слово" name="search">
+    <input type="number" placeholder="от" name="from_price">
+    <input type="number" placeholder="до" name="to_price">
+    <select name="category_id">
+        <option value="">Все категории</option>
+        {% for category in categories %}
+            <option value="{{ category.id }}">
+                    {{ category.name }}
+            </option>
+        {% endfor %}
+
+    </select>
+    <button type="submit">Найти</button>
+</form>
+<br/>
+{% for product in product_list %}
+    <a href="/product/{{ product.id }}">Title : {{ product.title }}</a>
+    <p>Price : {{ product.price }}</p>
+    <hr>
+
+
+{% endfor %}
+</body>
+</html>

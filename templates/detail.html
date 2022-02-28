@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Описание продукта</h1>
+<a href="/"><button>Назад</button></a>
+ <h5>Номер : {{ product.id }}</h5>
+ <a>Наименование : {{ product.title }}</a>
+ <p>Описание : {{ product.description }}</p>
+ <p>Цена : {{ product.price }}</p>
+ <p>Срок годности : {{ product.date_end }}</p>
+ <p>Категория : {{ product.category.name }}</p>
+ <hr>
+</body>
+</html>

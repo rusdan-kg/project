@@ -1,0 +1,7 @@
+{% extends 'layout..html' %}
+{% load static %}
+{% block content %}
+    <div class="alert alert-{{ message_type }}" role="alert" style="width: auto">
+            <p>{{ message }}</p>
+        </div>
+{% endblock %}

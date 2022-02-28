@@ -1,0 +1,19 @@
+{% extends 'Layout.html' %}
+{% load static %}
+
+{% block content %}
+    <h4>Авторизация</h4>
+    {% if Ошибка %}
+        <div class="alert alert-dark" role="alert" style="width: auto">
+            <p>{{ Ошибка }}</p>
+        </div>
+    {% endif %}
+    <form method="post" action="/login/{% if next %}?next={{ next }}{% endif %}" style="width: auto">
+        {% csrf_token %}
+        <input class="form-control" type="text" name="username" placeholder="Введите логин">
+        <br/>
+        <input class="form-control" type="password" name="password" placeholder="Введите пароль">
+        <br/>
+        <button class="btn btn-success" type="submit">Войти</button>
+    </form>
+{% endblock %}

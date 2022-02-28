@@ -1,0 +1,13 @@
+{% extends 'Layout.html' %}
+{% load static %}
+{% block content %}
+    <h1>Список продуктов</h1>
+    <p><a href="/create/">
+        <button class="btn btn-success" style="width: 400px">Создать продукт</button>
+    </a></p>
+    {% for product in product_list %}
+        <a href="/product/{{ product.id }}">Title : {{ product.title }}</a>
+        <p>Price : {{ product.price }}</p>
+        <hr>
+    {% endfor %}
+{% endblock %}
