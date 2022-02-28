@@ -127,6 +127,6 @@ def confirm(request):
     except:
         context = {
             'message_type': 'danger',
-            'message': 'SOMETHING WRONG WITH YOUR CODE!!!'
+            'message': 'SOMETHING WRONG WITH YOUR CODE'
         }
     return render(request, 'message.html', context=context)
